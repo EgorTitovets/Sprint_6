@@ -4,7 +4,6 @@ import Sprint_6.data
 from Sprint_6.pages.main_page import MainPage
 from Sprint_6.pages.order_page import OrderPage
 from Sprint_6.locators.main_page_locators import MainPageLocators
-from Sprint_6.locators.order_page_locators import OrderPageLocators
 
 
 @allure.suite('Тесты оформления заказа аренды самоката')
@@ -28,4 +27,4 @@ class TestOrderPage:
         main_page.click_to_order_button(locator)
         order_page.set_order_part_1(order_data)
         order_page.set_order_part_2(order_data)
-        assert "Заказ оформлен" in order_page.check_order(OrderPageLocators.ORDER_CONFIRMED_MESSAGE)
+        assert order_page.is_order_confirmed(), "Заказ не оформлен"

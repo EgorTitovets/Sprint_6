@@ -3,6 +3,7 @@ import allure
 from Sprint_6.locators.order_page_locators import OrderPageLocators
 from Sprint_6.pages.base_page import BasePage
 
+
 class OrderPage(BasePage):
 
     @allure.step("Заполняем первую часть формы заказа Самоката")
@@ -26,5 +27,6 @@ class OrderPage(BasePage):
         self.click_to_element(OrderPageLocators.CONFIRM_ORDER_YES_BUTTON)
 
     @allure.step("Проверяем, что 'Заказ оформлен")
-    def check_order(self, locator):
-        return self.get_text_from_element(locator)
+    def is_order_confirmed(self):
+        confirmation_message = self.find_element_with_wait(OrderPageLocators.ORDER_CONFIRMED_MESSAGE)
+        return "Заказ оформлен" in confirmation_message.text

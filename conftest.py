@@ -1,7 +1,7 @@
 import pytest
 from selenium import webdriver
 from Sprint_6.data import Urls
-from Sprint_6.locators.main_page_locators import MainPageLocators
+from Sprint_6.pages.main_page import MainPage
 
 
 @pytest.fixture
@@ -13,5 +13,8 @@ def driver():
 
 @pytest.fixture
 def accept_cookies(driver):
-    driver.find_element(*MainPageLocators.CONFIRM_COOKIES_BUTTON).click()
+    main_page = MainPage(driver)
+    main_page.accept_cookies()
+
+
 
