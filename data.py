@@ -1,4 +1,3 @@
-
 from Sprint_6.locators.order_page_locators import OrderPageLocators
 
 QUESTIONS_AND_ANSWERS = [
@@ -36,3 +35,7 @@ ORDER_DATA_2 = {
     "scooter_color": OrderPageLocators.SCOOTER_COLOR_GREY,
     "rental_period": OrderPageLocators.RENTAL_PERIOD_FIVE_DAYS
 }
+
+
+class Urls:
+    main_page_url = "https://qa-scooter.praktikum-services.ru/"

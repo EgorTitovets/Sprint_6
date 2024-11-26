@@ -1,9 +1,11 @@
+import allure
 
 from Sprint_6.locators.order_page_locators import OrderPageLocators
 from Sprint_6.pages.base_page import BasePage
 
 class OrderPage(BasePage):
 
+    @allure.step("Заполняем первую часть формы заказа Самоката")
     def set_order_part_1(self, order_data):
         self.add_text_to_element(OrderPageLocators.NAME_INPUT, order_data["name"])
         self.add_text_to_element(OrderPageLocators.LAST_NAME_INPUT, order_data["last_name"])
@@ -13,6 +15,7 @@ class OrderPage(BasePage):
         self.add_text_to_element(OrderPageLocators.PHONE_NUMBER_INPUT, order_data["phone_number"])
         self.click_to_element(OrderPageLocators.NEXT_BUTTON)
 
+    @allure.step("Заполняем вторую часть формы заказа Самоката")
     def set_order_part_2(self, order_data):
         self.add_text_to_element(OrderPageLocators.DELIVERY_DATE_INPUT, order_data["delivery_date"])
         self.click_to_element(OrderPageLocators.SELECTED_DELIVERY_DATE)
@@ -22,5 +25,6 @@ class OrderPage(BasePage):
         self.click_to_element(OrderPageLocators.ORDER_BUTTON)
         self.click_to_element(OrderPageLocators.CONFIRM_ORDER_YES_BUTTON)
 
+    @allure.step("Проверяем, что 'Заказ оформлен")
     def check_order(self, locator):
         return self.get_text_from_element(locator)

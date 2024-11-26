@@ -1,3 +1,4 @@
+import allure
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 
@@ -22,11 +23,15 @@ class BasePage:
         return self.find_element_with_wait(locator).text
 
     def scroll_to_element(self, locator):
-        WebDriverWait(self.driver, 3).until(expected_conditions.visibility_of_element_located(locator))
-        element = self.driver.find_element(*locator)
+        element = self.find_element_with_wait(locator)
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
 
     def format_locators(self, locator_1, num):
         method, locator = locator_1
         locator = locator.format(num)
         return (method, locator)
+
+    @allure.step("Переключаемся на последнюю вкладку/страницу")
+    def switch_to_last_window(self):
+        windows = self.driver.window_handles
+        self.driver.switch_to.window(windows[-1])

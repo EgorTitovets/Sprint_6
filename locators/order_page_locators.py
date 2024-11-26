@@ -4,7 +4,7 @@ class OrderPageLocators:
     # форма заказа Часть 1
     NAME_INPUT = (By.XPATH, "//input[@placeholder='* Имя']")
     LAST_NAME_INPUT = (By.XPATH, "//input[@placeholder='* Фамилия']")
-    DELIVERY_ADDRESS_INPUT = (By.XPATH, "//input[@placeholder='* Адрес: куда привезти заказ']")  # ADDRESS_INPUT
+    DELIVERY_ADDRESS_INPUT = (By.XPATH, "//input[@placeholder='* Адрес: куда привезти заказ']")
     METRO_STATION_INPUT_FIELD = (By.XPATH, "//input[@placeholder='* Станция метро']")
     METRO_STATION_CHERKIZOVSKAYA = (By.XPATH, "//div[@class='Order_Text__2broi' and text()='Черкизовская']")
     METRO_STATION_LUBYANKA = (By.XPATH, "//div[@class='Order_Text__2broi' and text()='Лубянка']")

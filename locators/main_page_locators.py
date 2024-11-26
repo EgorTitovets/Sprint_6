@@ -13,3 +13,5 @@ class MainPageLocators:
     SCOOTER_LOGO = (By.XPATH, "//img[@alt='Scooter']")
     UNIQUE_DESCRIPTION = (By.XPATH, "//div[contains(text(), 'Привезём его прямо к вашей двери')]")
 
+    CONFIRM_COOKIES_BUTTON = (By.ID, "rcc-confirm-button")
+
