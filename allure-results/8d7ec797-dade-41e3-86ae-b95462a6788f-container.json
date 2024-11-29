@@ -1,0 +1,1 @@
+{"uuid": "a76a6732-ca31-41ca-89ee-a0bb84fd430e", "children": ["211eae11-af16-474a-bed3-c046b8b7bf2b"], "befores": [{"name": "accept_cookies", "status": "passed", "steps": [{"name": "Подтверждение cookies на странице", "status": "passed", "start": 1732641284529, "stop": 1732641284791}], "start": 1732641284529, "stop": 1732641284791}], "start": 1732641284529, "stop": 1732641285285}
